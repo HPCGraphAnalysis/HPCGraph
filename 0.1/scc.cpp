@@ -365,7 +365,7 @@ int scc_color(dist_graph_t* g, mpi_data_t* comm, queue_data_t* q,
 #pragma omp for
   for (uint64_t i = 0; i < g->n_total; ++i)
     if (colors[i] == SCC_MARKED && scc[i] >= g->n)
-      printf("FUCKFUCKFUCK %lu\n", scc[i]);
+      printf("SCC assignment is %lu, out of bounds for n=%lu\n", scc[i], g->n);
 
   empty_queue(&tq, q);
 #pragma omp barrier
